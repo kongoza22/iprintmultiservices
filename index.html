@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPRINTMULTISERVICES - Bienvenue</title>
+    <!-- Font Awesome pour l'icône WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #0d001a, #1a0033, #001133, #1f002b);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 20px;
+            overflow-x: hidden;
+            color: #ffffff;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Effet de bulles de lumière en arrière-plan */
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, rgba(236, 72, 153, 0.3) 50%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: 1;
+            animation: pulse 6s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        /* Carte Principale Style Neon Glassmorphism */
+        .card {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            padding: 40px 25px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
+                        0 0 20px rgba(0, 212, 255, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Logo / Icône avec effet néon */
+        .logo-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #00d4ff, #e01cd5);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6),
+                        0 0 40px rgba(224, 28, 213, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .logo-box i {
+            font-size: 42px;
+            color: #ffffff;
+        }
+
+        /* Titre Brillant */
+        .title {
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00d4ff, #ffffff, #ff007f);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Description */
+        .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #d1d5db;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* Bouton WhatsApp avec effet Pulsant et Néon */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.8);
+            background: linear-gradient(135deg, #2bdf6f, #159a8b);
+        }
+
+        .btn-whatsapp i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-effect"></div>
+
+    <div class="card">
+        <!-- Icône Logo -->
+        <div class="logo-box">
+            <i class="fa-solid fa-print"></i>
+        </div>
+
+        <!-- Titre avec effets -->
+        <h1 class="title">Bienvenue chez<br>IPRINTMULTISERVICES</h1>
+
+        <!-- Texte de bienvenue -->
+        <p class="description">
+            Nous sommes ravis de vous accueillir ! Pour tous vos besoins d'impression et de services multiples, contactez-nous directement en un clic.
+        </p>
+
+        <!-- Bouton WhatsApp (Remplacer 225XXXXXXXXXX par votre numéro) -->
+        <a href="https://wa.me/0140071815" class="btn-whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            Contactez-nous sur WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
