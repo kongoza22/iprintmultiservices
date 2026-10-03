@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenue chez GAICHILAND - Votre partenaire privilégié pour des services d'excellence et un accompagnement sur-mesure.">
+    <title>GAICHILAND — Excellence & Engagement Client</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Theme Extension -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#080C14',
+                            card: '#111827',
+                            cardLight: '#1F2937',
+                            gold: '#D4AF37',
+                            goldHover: '#B89528',
+                            emerald: '#0D9488',
+                            emeraldHover: '#0F766E',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-subtle': 'pulseSubtle 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSubtle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.85', transform: 'scale(1.02)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(8, 12, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0C2 0%, #D4AF37 50%, #997819 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased min-h-screen relative overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center font-serif text-brand-dark font-bold text-2xl shadow-md">
+                    G
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-2xl tracking-wider text-slate-100 leading-none">
+                        GAICHILAND
+                    </span>
+                    <span class="text-[10px] tracking-widest text-brand-gold uppercase mt-0.5 font-semibold">Excellence & Service</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-brand-gold transition-colors">À Propos</a>
+                <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+                <a href="#faq" class="hover:text-brand-gold transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Direct Header WhatsApp Link -->
+            <button onclick="triggerDirectWhatsApp()" class="hidden sm:inline-flex items-center gap-2 bg-brand-emerald hover:bg-brand-emeraldHover text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold transition-all shadow-lg hover:shadow-brand-emerald/20">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Espace WhatsApp</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
+            
+            <!-- Top Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-card border border-brand-gold/30 text-brand-gold text-xs font-semibold uppercase tracking-widest mb-8 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Accueil Officiel Clientèle</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-tight max-w-5xl">
+                Bienvenue chez <br class="hidden sm:block">
+                <span class="gold-gradient-text">GAICHILAND</span>
+            </h1>
+
+            <!-- Animated Subtitle -->
+            <p class="text-slate-300 text-lg sm:text-2xl max-w-3xl font-light mb-10 h-16 sm:h-12">
+                <span id="typewriter" class="text-white font-normal"></span>
+                <span class="animate-pulse text-brand-gold font-bold">|</span>
+            </p>
+
+            <!-- Quick Action Cards / Hero CTA -->
+            <div class="w-full max-w-3xl glass-card rounded-2xl p-6 sm:p-8 mt-4 text-left border border-white/10 shadow-2xl relative overflow-hidden">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    <h2 class="text-base font-semibold text-slate-200">Démarrer un échange direct</h2>
+                </div>
+
+                <!-- Form to compose custom message -->
+                <div class="space-y-4">
+                    <div>
+                        <label for="service-select" class="block text-xs uppercase text-slate-400 font-semibold mb-1">Type de demande :</label>
+                        <select id="service-select" class="w-full bg-brand-dark/80 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-brand-gold transition-colors">
+                            <option value="Information Générale">Demande d'information générale</option>
+                            <option value="Services Sur-Mesure">Prestation / Service Sur-Mesure</option>
+                            <option value="Support & Assistance">Assistance & Support Client VIP</option>
+                            <option value="Prise de Rendez-vous">Prise de Rendez-vous direct</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="custom-msg" class="block text-xs uppercase text-slate-400 font-semibold mb-1">Votre message :</label>
+                        <textarea id="custom-msg" rows="2" class="w-full bg-brand-dark/80 border border-slate-700 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-brand-gold transition-colors resize-none" placeholder="Bonjour GAICHILAND, je souhaite..."></textarea>
+                    </div>
+
+                    <button onclick="sendCustomWhatsApp()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-xl flex items-center justify-center gap-3 group cursor-pointer">
+                        <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm sm:text-base uppercase tracking-wider">Envoyer votre message via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div id="about" class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl mt-16 pt-8 border-t border-slate-800">
+                <div class="text-center p-4">
+                    <p class="font-serif text-3xl sm:text-4xl font-bold text-brand-gold">100%</p>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Sérieux & Engagement</p>
+                </div>
+                <div class="text-center p-4">
+                    <p class="font-serif text-3xl sm:text-4xl font-bold text-brand-gold">&lt; 15 min</p>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Délai moyen de réponse</p>
+                </div>
+                <div class="text-center p-4">
+                    <p class="font-serif text-3xl sm:text-4xl font-bold text-brand-gold">24 / 7</p>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Disponibilité VIP</p>
+                </div>
+                <div class="text-center p-4">
+                    <p class="font-serif text-3xl sm:text-4xl font-bold text-brand-gold">Sur-Mesure</p>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Accompagnement Dédié</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 px-6 md:px-12 bg-slate-950/50 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Pourquoi nous faire confiance</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">L'Excellence GAICHILAND</h2>
+                    <div class="w-16 h-0.5 bg-brand-gold mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold text-xl mb-6">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-3">Rigueur & Fiabilité</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Nos services respectent des normes de qualité rigoureuses. Nous nous engageons à offrir une satisfaction totale à chacun de nos clients.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="quickSelectService('Rigueur & Fiabilité')" class="mt-6 inline-flex items-center text-xs font-semibold text-brand-gold hover:underline gap-1">
+                            <span>En savoir plus</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-3">Relation Client VIP</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Bénéficiez d'un interlocuteur dédié et d'un suivi fluide. Votre expérience utilisateur est au cœur de notre démarche.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="quickSelectService('Relation Client VIP')" class="mt-6 inline-flex items-center text-xs font-semibold text-brand-gold hover:underline gap-1">
+                            <span>En savoir plus</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold text-xl mb-6">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-3">Réactivité Instantanée</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Un canal direct via WhatsApp vous garantit des réponses rapides, précises et sans intermédiaires inutiles.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="quickSelectService('Réactivité Instantanée')" class="mt-6 inline-flex items-center text-xs font-semibold text-brand-gold hover:underline gap-1">
+                            <span>En savoir plus</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-20 px-6 md:px-12 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold">Réponses Rapides</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Foire Aux Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="glass-card rounded-xl p-5 cursor-pointer group">
+                    <summary class="font-semibold text-slate-200 flex justify-between items-center list-none">
+                        <span>Comment entrer rapidement en contact avec GAICHILAND ?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-brand-gold group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800">
+                        Le moyen le plus rapide est d'utiliser nos boutons WhatsApp présents sur le site. Vous serez directement redirigé vers notre messagerie officielle.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-xl p-5 cursor-pointer group">
+                    <summary class="font-semibold text-slate-200 flex justify-between items-center list-none">
+                        <span>Quels sont les horaires de réponse sur WhatsApp ?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-brand-gold group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800">
+                        Notre équipe assure une permanence continue. Nous répondons généralement en moins de 15 minutes pendant les heures ouvrées.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-xl p-5 cursor-pointer group">
+                    <summary class="font-semibold text-slate-200 flex justify-between items-center list-none">
+                        <span>Puis-je demander une offre personnalisée ?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-brand-gold group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800">
+                        Absolument. Utilisez le formulaire de message en haut de page en sélectionnant "Services Sur-Mesure" pour exposer directement votre besoin.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        
+        <!-- Floating Welcome Popup -->
+        <div id="wa-popup" class="glass-card p-4 rounded-2xl max-w-xs shadow-2xl border border-brand-emerald/30 hidden animate-fade-in-up">
+            <div class="flex items-start justify-between gap-3 mb-2">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-brand-emerald flex items-center justify-center text-white text-sm font-bold">
+                        G
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-white">GAICHILAND</p>
+                        <p class="text-[10px] text-emerald-400">En ligne</p>
+                    </div>
+                </div>
+                <button onclick="closeWaPopup()" class="text-slate-400 hover:text-white text-xs">&times;</button>
+            </div>
+            <p class="text-xs text-slate-300">
+                Bonjour ! Comment pouvons-nous vous aider aujourd'hui ? Écrivez-nous directement.
+            </p>
+            <button onclick="triggerDirectWhatsApp()" class="mt-3 w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Démarrer le chat</span>
+            </button>
+        </div>
+
+        <!-- Floating Button -->
+        <button onclick="triggerDirectWhatsApp()" class="relative group bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform duration-300 hover:scale-105 border border-emerald-400/30 cursor-pointer">
+            <span class="absolute -inset-1 rounded-full bg-emerald-500 opacity-30 animate-ping pointer-events-none"></span>
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+            <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-brand-dark rounded-full"></span>
+        </button>
+    </div>
+
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800 py-12 px-6 md:px-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            
+            <div class="space-y-4 md:col-span-2">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-brand-gold flex items-center justify-center font-serif text-brand-dark font-bold text-lg">
+                        G
+                    </div>
+                    <span class="font-serif font-bold text-xl text-white tracking-wider">GAICHILAND</span>
+                </div>
+                <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+                    Plateforme officielle de contact et de services d'excellence. Engagement, réactivité et professionnalisme à votre service.
+                </p>
+            </div>
+
+            <div>
+                <p class="text-white font-semibold mb-4 text-xs uppercase tracking-wider">Navigation</p>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#about" class="hover:text-brand-gold transition-colors">À Propos</a></li>
+                    <li><a href="#services" class="hover:text-brand-gold transition-colors">Nos Piliers</a></li>
+                    <li><a href="#faq" class="hover:text-brand-gold transition-colors">Foire aux questions</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="text-white font-semibold mb-4 text-xs uppercase tracking-wider">Contact Direct</p>
+                <p class="text-xs text-slate-400 mb-2">Canal Officiel WhatsApp :</p>
+                <button onclick="triggerDirectWhatsApp()" class="inline-flex items-center gap-2 text-xs text-emerald-400 hover:underline">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Discuter avec l'équipe</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-6 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <p>&copy; <span id="year"></span> GAICHILAND. Tous droits réservés.</p>
+            <p>Conçu pour une expérience client optimale.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* ==========================================================================
+           CONFIGURATION WHATSAPP (À PERSONNALISER TRÈS FACILEMENT CI-DESSOUS)
+           ========================================================================== */
+        // Saisissez votre numéro de téléphone au format international (SANS le signe + ni les espaces)
+        // Exemple : "33612345678" pour la France, "225070000000" pour la Côte d'Ivoire, etc.
+        const CONFIG_WHATSAPP_NUMBER = "000000000000"; 
+        
+        // Message par défaut pour les prises de contact directes
+        const DEFAULT_WHATSAPP_MESSAGE = "Bonjour GAICHILAND, je souhaite obtenir des informations sur vos services.";
+
+        /* ==========================================================================
+           LOGIQUE DES BOUTONS ET DU TYPEWRITER
+           ========================================================================== */
+        
+        // Fonction globale d'ouverture WhatsApp
+        function openWhatsAppWithText(text) {
+            const encodedText = encodeURIComponent(text || DEFAULT_WHATSAPP_MESSAGE);
+            const url = `https://wa.me/${CONFIG_WHATSAPP_NUMBER}?text=${encodedText}`;
+            window.open(url, '_blank');
+        }
+
+        // Action bouton direct
+        function triggerDirectWhatsApp() {
+            openWhatsAppWithText(DEFAULT_WHATSAPP_MESSAGE);
+        }
+
+        // Action envoi de formulaire personnalisé
+        function sendCustomWhatsApp() {
+            const serviceSelect = document.getElementById('service-select');
+            const customMsgInput = document.getElementById('custom-msg');
+            
+            const selectedService = serviceSelect ? serviceSelect.value : 'Service';
+            const userMsg = customMsgInput ? customMsgInput.value.trim() : '';
+
+            let finalMessage = `Bonjour GAICHILAND,\n\n`;
+            finalMessage += `*Type de demande :* ${selectedService}\n`;
+            if (userMsg) {
+                finalMessage += `*Message :* ${userMsg}`;
+            } else {
+                finalMessage += `Je souhaiterais être recontacté à ce sujet.`;
+            }
+
+            openWhatsAppWithText(finalMessage);
+        }
+
+        // Pré-remplissage rapide depuis la section "Nos Piliers"
+        function quickSelectService(serviceName) {
+            const serviceSelect = document.getElementById('service-select');
+            if (serviceSelect) {
+                serviceSelect.value = "Services Sur-Mesure";
+            }
+            const customMsgInput = document.getElementById('custom-msg');
+            if (customMsgInput) {
+                customMsgInput.value = `Je souhaite en savoir plus concernant votre pilier : "${serviceName}".`;
+            }
+        }
+
+        // Fermer la pop-up flottante
+        function closeWaPopup() {
+            const popup = document.getElementById('wa-popup');
+            if (popup) popup.classList.add('hidden');
+        }
+
+        // Effet de frappe (Typewriter)
+        const typewriterPhrases = [
+            "Votre partenaire de confiance pour des services sur-mesure.",
+            "Une expérience client réactive et haut de gamme.",
+            "Accompagnement, rigueur et disponibilité 24/7.",
+            "Contactez-nous directement via notre canal officiel."
+        ];
+
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        function handleTypewriter() {
+            const el = document.getElementById('typewriter');
+            if (!el) return;
+
+            const current = typewriterPhrases[phraseIdx];
+
+            if (isDeleting) {
+                el.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                el.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let speed = isDeleting ? 25 : 55;
+
+            if (!isDeleting && charIdx === current.length) {
+                speed = 2500; // Pause en fin de phrase
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % typewriterPhrases.length;
+                speed = 400;
+            }
+
+            setTimeout(handleTypewriter, speed);
+        }
+
+        // Initialisation globale au chargement du DOM
+        window.addEventListener('DOMContentLoaded', () => {
+            // Mettre à jour l'année automatiquement
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Initialiser l'effet typewriter
+            handleTypewriter();
+
+            // Pré-remplir la zone de message par défaut
+            const customMsgInput = document.getElementById('custom-msg');
+            if (customMsgInput) customMsgInput.value = DEFAULT_WHATSAPP_MESSAGE;
+
+            // Afficher le Widget Popup après 3 secondes
+            setTimeout(() => {
+                const popup = document.getElementById('wa-popup');
+                if (popup) popup.classList.remove('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
